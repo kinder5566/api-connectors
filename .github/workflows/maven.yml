@@ -18,10 +18,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: To java dir
-      run: cd auto-generated/java
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file auto-generated/java/pom.xml
     - uses: actions/upload-artifact@v1
       with:
         name: swagger-java-client
